@@ -1,8 +1,22 @@
 @import "_variables";
 @import "_maxins";
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
 
 body {
-  a {
+  display: grid;
+  width: 100%;
+  width: 100vh;
+
+  grid-template: "nav main" 1fr / 50% 50%;
+  nav {
+    grid-area: nav;
+  }
+  main {
+    grid-area: main;
+    background-color: $red;
+  }
+
+  /* a {
     margin-bottom: 10px;
     &:nth-child(odd) {
       @include link(blue);
@@ -10,5 +24,5 @@ body {
     &:nth-child(even) {
       @include link(red);
     }
-  }
+  } */
 }
