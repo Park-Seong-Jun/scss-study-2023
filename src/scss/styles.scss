@@ -1,15 +1,59 @@
 @import "_variables";
 @import "_maxins";
 @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
-
+a {
+  text-decoration: none;
+}
 body {
   display: grid;
   width: 100%;
-  width: 100vh;
+  background-color: #f0f0f0;
 
   grid-template: "nav main" 1fr / 50% 50%;
+
   nav {
     grid-area: nav;
+    padding: 0 70px;
+    h1 {
+      font-size: 72px;
+      font-weight: 500;
+      color: $red;
+      letter-spacing: 2px;
+      margin: 70px 0;
+      font-family: RingsideExtraWide-Book, Blank, Helvetica Neue, Helvetica,
+        sans-serif;
+    }
+    p {
+      color: $red;
+      font-size: 24px;
+      margin-bottom: 20px;
+      font-family: RingsideRegular-Book, Blank, Helvetica Neue, Helvetica,
+        sans-serif;
+    }
+    h4 {
+      color: $red;
+      font-size: 15px;
+      margin-bottom: 20px;
+    }
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      color: rgba(0, 0, 0, 0.6);
+      margin-bottom: 15px;
+      li {
+        margin: 0 10px 5px 0;
+        padding-bottom: 5px;
+        box-shadow: 0 1px 0 rgba(0, 0, 0, 0.6);
+        font-weight: 500;
+        width: max-content;
+        text-decoration: none;
+        color: black;
+      }
+    }
+    p:last-child {
+      font-size: 10px;
+      color: rgba(0, 0, 0, 0.6);
+    }
   }
   main {
     grid-area: main;
