@@ -4,18 +4,20 @@
 a {
   text-decoration: none;
 }
+
 body {
-  display: grid;
   width: 100%;
   background-color: #f0f0f0;
 
-  grid-template: "nav main" 1fr / 50% 50%;
-
   nav {
-    grid-area: nav;
     padding: 0 70px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: $nav-width;
+    box-sizing: border-box;
     h1 {
-      font-size: 72px;
+      font-size: 5vw;
       font-weight: 500;
       color: $red;
       letter-spacing: 2px;
@@ -55,9 +57,87 @@ body {
       color: rgba(0, 0, 0, 0.6);
     }
   }
+
   main {
-    grid-area: main;
+    margin-left: $nav-width;
     background-color: $red;
+
+    color: white;
+    box-sizing: border-box;
+    .filter {
+      position: sticky;
+      top: 0;
+      height: 100px;
+      border-bottom: 1px solid $brown;
+      div {
+        display: flex;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        background-color: $red;
+
+        span {
+          color: $brown;
+          box-shadow: $underline;
+          margin-bottom: 10px;
+        }
+      }
+    }
+
+    article {
+      background: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0.1) 5%,
+          transparent,
+          transparent,
+          transparent,
+          transparent
+        )
+        $red;
+      padding: 70px;
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        margin-bottom: 30px;
+        h1 {
+          font-size: 40px;
+          font-weight: 800;
+        }
+        span {
+          text-align: right;
+          font-size: 15px;
+        }
+      }
+      .movie-preview {
+        .movie-play {
+          height: 300px;
+          border: 1px solid black;
+          margin-bottom: 40px;
+        }
+      }
+      .footer {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        margin: 15px 0;
+        span:last-child {
+          color: $brown;
+          font-weight: 500;
+          font-size: 15px;
+        }
+      }
+      .comment {
+        display: flex;
+        justify-content: space-between;
+        color: $brown;
+        font-weight: 600;
+        font-size: 15px;
+        span:last-child {
+          box-shadow: $underline;
+        }
+      }
+    }
   }
 
   /* a {
@@ -70,3 +150,18 @@ body {
     }
   } */
 }
+/* 
+@media screen and (max-width: 800px) {
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+  nav {
+    position: static;
+    width: 100%;
+  }
+  main {
+    margin-left: 0;
+  }
+}
+ */
