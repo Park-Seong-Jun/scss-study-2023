@@ -1,14 +1,1 @@
 @import "_variables";
-@import "_maxins";
-
-body {
-  a {
-    margin-bottom: 10px;
-    &:nth-child(odd) {
-      @include link(blue);
-    }
-    &:nth-child(even) {
-      @include link(red);
-    }
-  }
-}
